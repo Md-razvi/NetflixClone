@@ -8,5 +8,6 @@ public class UserRequest {
     private String password;
     private String role;
     private Boolean isActive;
+    private String fullName;
 
 }

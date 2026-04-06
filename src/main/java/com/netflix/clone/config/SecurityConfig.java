@@ -20,13 +20,13 @@ public class SecurityConfig{
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
     public static final String public_Endpoints[] ={
-            "api/auth/login",
-            "api/auth/signup",
-            "api/auth/validate-email",
-            "api/auth/verify-email",
-            "api/auth/resend-verification",
-            "api/auth/forgot-password",
-            "api/auth/reset-password"
+            "/api/auth/login",
+            "/api/auth/signup",
+            "/api/auth/validate-email",
+            "/api/auth/verify-email",
+            "/api/auth/resend-verification",
+            "/api/auth/forgot-password",
+            "/api/auth/reset-password"
     };
     @Bean
     public PasswordEncoder passwordEncoder(){

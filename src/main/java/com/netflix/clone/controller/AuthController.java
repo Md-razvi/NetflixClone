@@ -1,6 +1,8 @@
 package com.netflix.clone.controller;
 
+import com.netflix.clone.dto.request.LoginRequest;
 import com.netflix.clone.dto.request.UserRequest;
+import com.netflix.clone.dto.response.LoginResponse;
 import com.netflix.clone.dto.response.MessageResponse;
 import com.netflix.clone.service.AuthService;
 import jakarta.validation.Valid;
@@ -20,5 +22,10 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse>register(@Valid @RequestBody UserRequest userRequest){
         return  ResponseEntity.ok(authService.signup(userRequest));
+    }
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse>login(@Valid @RequestBody LoginRequest loginRequest){
+        LoginResponse loginResponse=authService.login(loginRequest.getEmail(),loginRequest.getPassword());
+        return ResponseEntity.ok(loginResponse);
     }
 }
