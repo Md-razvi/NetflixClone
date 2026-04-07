@@ -36,7 +36,7 @@ public class User {
     @Column(nullable = false)
     private boolean emailVerified=true;
     @Column(unique = true)
-    private String verificatonToken;
+    private String verificationToken;
 
     @Column
     private Instant verificationTokenExpiry;
